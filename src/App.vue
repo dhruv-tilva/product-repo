@@ -1,10 +1,10 @@
 <template>
-  <admin-panel></admin-panel>
+  <expanse-traker></expanse-traker>
 </template>
 
 <script>
-import AdminPanel from "./components/AdminPanel.vue"
+import ExpanseTraker from "./components/ExpanseTraker.vue"
 export default {
-  components: { AdminPanel }
+  components: { ExpanseTraker }
 }
 </script>
