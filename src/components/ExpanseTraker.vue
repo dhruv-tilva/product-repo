@@ -51,14 +51,33 @@ export default {
             if (value.name && value.price && value.price > 0) {
                 this.items.push(value);
                 this.total += this.items[this.items.length - 1].price;
+                // this.totals.push(this.total)
                 // console.log(this.total)
-                localStorage.setItem(value.name, value.price)
+                // localStorage.setItem(value.name, value.price
                 this.newItems = {
                     name: "",
                     price: ""
                 }
+                this.toLocalStorage();
+            }
+        },
+        toLocalStorage() {
+            localStorage.setItem("item", JSON.stringify(this.items))
+            localStorage.setItem("full", JSON.stringify(this.total))
+        },
+        fetchLocalStorage() {
+            const saveData = localStorage.getItem("item");
+            if (saveData) {
+                this.items = JSON.parse(saveData);
+            }
+            const saveTotal = localStorage.getItem("full")
+            if (saveTotal) {
+                this.total = saveTotal;
             }
         }
+    },
+    mounted() {
+        this.fetchLocalStorage();
     },
     computed: {
         hour() {
