@@ -21,9 +21,9 @@
                 <th class="border-2 border-[#dddddd] p-2 text-left lg:w-[14%]">Amount</th>
                 <th class="border-2 border-[#dddddd] p-2 text-left">Date</th>
             </tr>
-            <tr v-for="(x, ind) in items" :key="ind">
-                <td>{{ x.name }}</td>
-                <td>{{ x.price }} <span>&#8377</span></td>
+            <tr v-for="(item, ind) in items" :key="ind">
+                <td>{{ item.name }}</td>
+                <td>{{ item.price }} <span>&#8377</span></td>
                 <td class="">{{ hour + " : " }}{{ minutes + ", " }}{{ day + " " }}{{ Da + " " }}{{ month + " " }}{{
                     date.getFullYear() }}</td>
             </tr>
