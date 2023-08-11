@@ -48,6 +48,7 @@ export default {
     methods: {
         addItem: function () {
             let value = this.newItems;
+            value.name = value.name.charAt(0).toUpperCase() + value.name.slice(1)
             if (value.name && value.price && value.price > 0) {
                 this.items.push(value);
                 this.total += this.items[this.items.length - 1].price;
